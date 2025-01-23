@@ -59,8 +59,7 @@ project-name/
 
 ## Contributors
 - **Hi my name is Tom** - Hello team-members if you made it here then you are on the right track!
-- **Teammate Name** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
-
+- **Hi my name is Kalephe** - First draft.
 ---
 
 ## Acknowledgments
