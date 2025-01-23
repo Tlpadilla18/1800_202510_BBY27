@@ -59,7 +59,9 @@ project-name/
 
 ## Contributors
 - **Hi my name is Tom** - Hello team-members if you made it here then you are on the right track!
+- **Hi I am Isabel** - Hello everyone, lets work hard! 
 - **Hi my name is Kalephe** - First draft.
+
 ---
 
 ## Acknowledgments
