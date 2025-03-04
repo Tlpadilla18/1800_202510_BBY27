@@ -10,25 +10,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Boostrap Library JS CDN  go here -->
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 
+    <!-- Other libraries go here -->
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <!-- Other libraries go here -->
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a067b6895d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <!------------------------------>
+
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Udot.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                ConnectU
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Login</a></li>
+                    <li><a class="dropdown-item" href="#">Create account</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                    <li><a class="dropdown-item" href="#">Features</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="p-5 text-center bg-image" style="
+    background-image: url('https://images.unsplash.com/photo-1586783965334-e29d38a767b6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 400px;
+    ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">Welcome to ConnectU</h1>
+                    <h4 class="mb-3">Where your journey begins!</h4>
+                    <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero -->
+    <div id="carouselExampleCaptions" class="carousel slide" height="">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src=".." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
+    <footer class="bg-primary text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">About</h5>
+                    <p>
+                        Our goal is to foster community, simplify navigation, and keep users informed,
+                        enhancing their campus experience and connectivity. We’re about creating a welcoming,
+                        inclusive space where students and newcomers can stay engaged, connected, and empowered
+                        to make the most of their time at BCIT.
+                    </p>
+                </div>
+                <!--Grid column-->
 
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Office Hours:</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Mon-Fri: 8am-1:30pm</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Saturday: closed</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Sunday: 10am-12pm</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-white">123-456-8908</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">ConnectU@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">3700 Willingdon Avenue, Burnaby, BC.</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">SE12-132</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">ConnectU.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -37,35 +213,7 @@
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
 
-    <footer>
-        <div class="footer-icon-container">
-            <img src="/images/favicon.ico" alt="Favicon" class="footer-icon">
-            <div class="footer-icon-text">Let us Connect Ü</div>
-        </div>
-        <div class="footer-links">
-            <div class="contact-us">
-                <a href="about.html" class="footer-link">Contact us</a>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com" class="footer-social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.twitter.com" class="footer-social-link" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.discord.com" class="footer-social-link" target="_blank">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="about">
-                <a href="about.html" class="footer-link">About</a>
-            </div>
-        </div>
-        <div class="footer-right">
-            <span class="footer-copyright">&copy; 2025 BBY_27</span>
-            <a href="privacy.html" class="footer-link">Privacy Policy</a>
-        </div>
-    </footer>
+    
 
 </body>
 
