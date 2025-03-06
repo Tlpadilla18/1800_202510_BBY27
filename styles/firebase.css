@@ -2,8 +2,3 @@ body {
     min-height: 100%;
 }
 
-.footer {
-    display: block;
-    position: absolute;
-    bottom: 0;
-}
