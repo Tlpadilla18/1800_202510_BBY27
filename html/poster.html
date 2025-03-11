@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Card Carousel with Big Image Slideshow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .big-image-container {
+            margin-left: 15%;
+            /* Push to the right of the aside-container */
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #1c8645;
+        }
+
+        .big-image-container img {
+            position: absolute;
+            max-height: 100%;
+            width: auto;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .big-image-container img.active {
+            opacity: 1;
+        }
+
+        .carousel-container {
+            margin-left: 15%;
+            /* Push to the right of the aside-container */
+            width: 85%;
+            /* Adjust to fit the remaining space */
+            height:50vh;
+            /* Adjust to fit the remaining space */
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #2b2491;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            flex: 0 0 200px;
+            margin: 0 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        .aside-container {
+            position: fixed;
+            /* Sticks the container to the side */
+            top: 0;
+            left: 0;
+            /* Set the container to the left side of the page */
+            width: 15%;
+            /* Adjust width as needed */
+            height: 100vh;
+            /* Full viewport height */
+            background-color: red;
+            /* Red background for easy identification */
+            z-index: 10;
+            /* Ensures it appears above other content if needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-image-container">
+        <img src="/images/BBY01.jpg" alt="Image 1" class="active">
+        <img src="/images/AM01.jpg" alt="Image 2">
+        <img src="/images/elmo.jpg" alt="Image 3">
+        <!-- Add more images as needed -->
+    </div>
+
+    <div class="carousel-container">
+        <button class="carousel-button left" onclick="prevSlide()">&#8249;</button>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="card">
+                    <img src="/images/drink1.jpg" alt="Poster 1">
+                    <div class="card-title">Poster 1</div>
+                </div>
+                <div class="card">
+                    <img src="/images/drink2.jpg" alt="Poster 2">
+                    <div class="card-title">Poster 2</div>
+                </div>
+                <div class="card">
+                    <img src="/images/drink3.jpg" alt="Poster 3">
+                    <div class="card-title">Poster 3</div>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+        </div>
+        <aside class="aside-container">
+            <!-- You can add content inside this container -->
+
+        </aside>
+        <button class="carousel-button right" onclick="nextSlide()">&#8250;</button>
+    </div>
+
+    <script>
+        // Big Image Slideshow
+        let bigImageIndex = 0;
+        const bigImages = document.querySelectorAll('.big-image-container img');
+
+        function changeBigImage() {
+            bigImages[bigImageIndex].classList.remove('active');
+            bigImageIndex = (bigImageIndex + 1) % bigImages.length;
+            bigImages[bigImageIndex].classList.add('active');
+        }
+
+        setInterval(changeBigImage, 10000); // Change big image every 10 seconds
+
+        // Carousel Logic
+        const carouselInner = document.querySelector('.carousel-inner');
+        const cards = document.querySelectorAll('.carousel-inner .card');
+        let carouselIndex = 0;
+
+        function updateCarousel() {
+            const offset = -carouselIndex * (cards[0].offsetWidth + 20); // 20px gap
+            carouselInner.style.transform = `translateX(${offset}px)`;
+        }
+
+        function nextSlide() {
+            if (carouselIndex < cards.length - 1) {
+                carouselIndex++;
+            } else {
+                carouselIndex = 0; // Loop back to the first card
+            }
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            if (carouselIndex > 0) {
+                carouselIndex--;
+            } else {
+                carouselIndex = cards.length - 1; // Loop back to the last card
+            }
+            updateCarousel();
+        }
+    </script>
+</body>
+
+</html>

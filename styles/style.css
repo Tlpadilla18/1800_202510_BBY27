@@ -13,13 +13,6 @@ body {
 }
 
 footer {
-<<<<<<< HEAD
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-=======
->>>>>>> 29f4efc915cf79ebafefd4757cefba0b3b89d6f8
     background-color: #f1f1f1;
     display: flex;
     justify-content: space-between;
