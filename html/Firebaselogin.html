@@ -19,7 +19,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <link rel="stylesheet" href="firebase.css">
+    <link rel="stylesheet" href="/styles/firebase.css">
 </head>
 
 <body>
@@ -51,25 +51,23 @@
     </nav>
 
     <!---Login form--->
-    <div class="container">
+    <div class="container flex-grow-1">
         <h1>Sign up and get started!</h1>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Please wait...</div>
     </div>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Please wait...</div>
 
     <!---footer--->
-    <div class="footer">
-        <footer class="bg-body-tertiary text-center">
-            <!-- Grid container -->
-            <div class="container p-4"></div>
-            <!-- Grid container -->
+    <footer class="bg-body-tertiary text-center mt-auto">
+        <!-- Grid container -->
+        <div class="container p-4"></div>
+        <!-- Grid container -->
 
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2020 Copyright: ConnectU
-            </div>
-        </footer>
-    </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright: ConnectU
+        </div>
+    </footer>
 
     <script src="/scripts/firebaseAPI_TEAM27.js"></script>
     <script src="/scripts/auth.js"></script>
