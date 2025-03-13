@@ -190,16 +190,23 @@ bg-primary {
 
 /*  Accordian*/
 
+.clubList {
+    width: 60%;
+    margin: auto;
+}
+
 .accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
     text-align: left;
     border: none;
     outline: none;
     transition: 0.4s;
+    font-size: 15pt;
+    width: 100%;
+    margin: auto;
   }
 
   .active, .accordion:hover {
@@ -209,6 +216,12 @@ bg-primary {
   .panel {
     padding: 0 18px;
     background-color: white;
-    display: none;
+    /* display: none; */
     overflow: hidden;
+
+    width: 100%;
+    margin: auto;
+
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
   }
