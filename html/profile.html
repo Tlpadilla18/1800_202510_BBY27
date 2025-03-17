@@ -17,7 +17,10 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg  bg-color-blue">
+    
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">ConnectÜ</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,13 +31,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/html/clubs.html">Clubs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Posts</a>
+                        <a class="nav-link" href="poster.html">Posts</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -48,7 +51,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">SignOut</a></li>
+                            <li><a class="dropdown-item" href="#">Sign Out</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -63,9 +66,17 @@
         </div>
     </nav>
 
-    <H1>Hello, <span id="name-goes-here"></span></H1>
+    <!-- Top Header with Background -->
+    <div class="topheader">
+        <div class="headercontent">
+            <h2>Hello, <span id="name-goes-here"></span></h2>
+            <p>Your personalized platform to connect and grow.</p>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
     <div class="container">
-        <h1>Profile </h1>
+        <h1>Profile</h1>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
@@ -78,17 +89,16 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" id="cityInput" class="form-control" placeholder="Enter your Password">
+                    <input type="password" id="cityInput" class="form-control" placeholder="Enter your password">
                 </div>
                 <div class="form-group">
                     <label>Status</label>
-                    <input type="text" id="countryInput" class="form-control" placeholder="Enter your status: eg. Student">
+                    <input type="text" id="countryInput" class="form-control" placeholder="Enter your status: e.g., Student">
                 </div>
                 <div class="form-group">
                     <label>Phone</label>
                     <input type="tel" id="phoneInput" class="form-control" placeholder="Enter your phone number">
                 </div>
-
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
                 <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
@@ -97,12 +107,9 @@
             </div>
         </form>
     </div>
+
     <script src="/scripts/firebaseAPI_TEAM27.js"></script>
     <script src="/scripts/profile.js"></script>
-
-
 </body>
-
-
 
 </html>

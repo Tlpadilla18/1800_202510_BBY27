@@ -1,13 +1,159 @@
+/* General Styles */
+body {
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+    color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Header */
+.topheader {
+    height: 200px;
+    background-image: url("/images/sparkels.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid #d4af37; /* Decorative border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Depth effect */
+}
+
 .headercontent {
     text-align: center;
     padding: 6em;
     margin: auto;
+    color: #ffffff;
 }
 
-.topheader {
-    height: 300px;
-    background-image: url("/images/sparkels.jpg");
+.headercontent h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
+
+.headercontent p {
+    font-size: 18px;
+}
+
+/* Navbar */
 .navbar {
     background-color: #4f47c2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .navbar-brand {
+    color: #ffe4d4;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #d4af37; /* Hover highlight */
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    border: 1px solid #d4af37;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* White for visibility */
+}
+
+.navbar .btn-outline-success {
+    border-color: #ffe4d4;
+    color: #ffe4d4;
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: #d4af37;
+    border-color: #d4af37;
+    color: #ffffff;
+}
+
+/* Profile Container */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border: 2px solid #d5c3a8;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.form-control {
+    font-family: "Georgia", serif;
+    padding: 10px;
+    border: 1px solid #d5c3a8;
+    border-radius: 5px;
+    background: #fdf3e5;
+    color: #4a4a4a;
+}
+
+.form-control::placeholder {
+    font-style: italic;
+    color: #b3b3b3;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #f9d5b4, #d4af37);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #d4af37, #f9d5b4);
+}
+
+.btn-info {
+    background: linear-gradient(to right, #d4af37, #ffe4d4);
+    color: #ffffff;
+}
+
+.btn-info:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ffe4d4, #d4af37);
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .headercontent h1 {
+        font-size: 28px;
+    }
+
+    .headercontent p {
+        font-size: 16px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
 }

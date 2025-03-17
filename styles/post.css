@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,53 +6,90 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+    color: #4a4a4a;
 }
 
+/* Big Image Container */
 .big-image-container {
-    margin-left: 30%;
-    /* Push to the right of the aside-container */
-    height: 50vh;
     display: flex;
+    flex-direction: row-reverse; /* Reverse the order of the children */
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    margin-left: 30%; /* Space for aside container */
+    padding: 20px;
+    background: rgba(255, 248, 240, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Section */
+.text-section {
+    flex: 1;
+    padding-left: 20px; /* Adjust to add space between text and image */
+    color: #8a6d3b;
+}
+
+.text-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    height: 45vh;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-    background-color: #1c8645;
 }
 
-.big-image-container img {
-    position: absolute;
+.image-section img {
     max-height: 100%;
-    width: auto;
-    transition: opacity 1s ease-in-out;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #d5c3a8;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out, transform 0.5s ease;
     opacity: 0;
+    position: absolute;
 }
 
-.big-image-container img.active {
+.image-section img.active {
     opacity: 1;
+    transform: scale(1.05);
 }
 
+
+
+/* Carousel Container */
 .carousel-container {
-    margin-left: 30%;
-    /* Push to the right of the aside-container */
-    width: 70%;
-    /* Adjust to fit the remaining space */
-    height:50vh;
-    /* Adjust to fit the remaining space */
-    overflow-y: auto;
+    margin-left: 30%; /* Default for larger screens */
+    width: 70%; /* Adjust to the remaining space */
+    height: 50vh;
+    overflow: hidden; /* Ensure content doesn't spill out */
     padding: 20px;
-    background-color: #2b2491;
+    background: #fefaf7; /* Softer background */
     display: flex;
     justify-content: center;
     position: relative;
+    border: 1px solid #d5c3a8; /* Decorative border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .carousel {
     display: flex;
     overflow: hidden;
-    width: 70%;
+    width: 100%;
 }
 
 .carousel-inner {
@@ -59,42 +97,81 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
+/* Cards */
 .card {
-    flex: 0 0 200px;
+    flex: 0 0 250px; /* Fixed width for each card */
     margin: 0 10px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
+    background: #ffffff; /* White card with slight shadow */
+    border-radius: 8px;
+    border: 1px solid #e3dcd5; /* Elegant border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 350px; /* Set consistent height for the cards */
 }
 
 .card img {
-    width: 70%;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 40%; /* Allocate 40% of the card height */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 10px 15px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-title {
     font-size: 18px;
-    font-weight: bold;
-    color: #333;
+    font-family: "Playfair Display", serif; /* Elegant font for title */
+    color: #8a6d3b; /* Gold-toned title */
+    margin-bottom: 10px;
 }
 
+.card-content p {
+    font-size: 14px;
+    font-family: "Georgia", serif;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.read-more {
+    font-size: 12px;
+    color: #8a6d3b;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-top: auto;
+}
+
+/* Buttons */
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #007bff;
+    background-color: #8a6d3b; /* Gold button */
     color: #fff;
     border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-button.left {
@@ -105,22 +182,74 @@ body {
     right: 10px;
 }
 
+/* Aside Container */
 .aside-container {
     position: fixed;
-    /* Sticks the container to the side */
     top: 0;
     left: 0;
-    /* Set the container to the left side of the page */
     width: 30%;
-    /* Adjust width as needed */
     height: 100vh;
-    /* Full viewport height */
-    background-color: whitesmoke;
-    /* Red background for easy identification */
-    z-index: 10;
-    /* Ensures it appears above other content if needed */
+    background: #fefaf7;
+    border-right: 2px solid #d5c3a8;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .aside-container h2 {
+    font-family: "Playfair Display", serif;
+    color: #8a6d3b;
     text-align: center;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .big-image-container {
+        flex-direction: column; /* Stack text and images vertically */
+        margin-left: 0; /* No margin for smaller screens */
+        height: auto; /* Adjust height */
+        padding: 15px;
+    }
+
+    .text-section {
+        padding-right: 0;
+        text-align: center; /* Center-align text */
+        margin-bottom: 15px; /* Add space below text */
+    }
+
+    .image-section {
+        display: flex;
+        height: auto;
+        justify-content: center;
+    }
+
+    .image-section img {
+        height: auto; /* Adjust image height */
+        max-width: 90%; /* Limit image size */
+    }
+
+}
+/* Responsive Styles for Small Screens */
+@media (max-width: 480px) {
+    .big-image-container {
+        padding: 10px;
+    }
+
+    .text-section h2 {
+        font-size: 20px; /* Smaller font sizes */
+    }
+
+    .text-section p {
+        font-size: 14px;
+    }
+
+    .image-section img {
+        max-width: 100%; /* Full width for images */
+    }
+
+    .aside-container {
+        width: 100%; /* Full width for the aside container */
+        height: auto;
+        position: static; /* Stack aside container in flow */
+        padding: 10px;
+        border-right: none; /* Remove side border */
+    }
 }
