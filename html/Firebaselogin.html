@@ -20,54 +20,18 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link rel="stylesheet" href="/styles/firebase.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
-    <!---Navbar--->
-    <nav class="navbar navbar-expand-lg bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">ConnectU</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    Connect, Engage, Thrive – with ConnectU.
-                </span>
-            </div>
+    <!--login-container-->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <h1 class="mb-4">Sign up and get started!</h1>
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Please wait...</div>
         </div>
-    </nav>
-
-    <!---Login form--->
-    <div class="container flex-grow-1">
-        <h1>Sign up and get started!</h1>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Please wait...</div>
     </div>
-
-    <!---footer--->
-    <footer class="bg-body-tertiary text-center mt-auto">
-        <!-- Grid container -->
-        <div class="container p-4"></div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2020 Copyright: ConnectU
-        </div>
-    </footer>
 
     <script src="/scripts/firebaseAPI_TEAM27.js"></script>
     <script src="/scripts/auth.js"></script>

@@ -10,7 +10,7 @@ body {
 }
 
 .big-image-container {
-    margin-left: 15%;
+    margin-left: 25%;
     /* Push to the right of the aside-container */
     height: 50vh;
     display: flex;
@@ -18,7 +18,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: #1c8645;
+    background-color: lightslategray;
 }
 
 .big-image-container img {
@@ -34,15 +34,15 @@ body {
 }
 
 .carousel-container {
-    margin-left: 30%;
+    margin-left: 25%;
     /* Push to the right of the aside-container */
-    width: 70%;
+    width: 75%;
     /* Adjust to fit the remaining space */
     height:50vh;
     /* Adjust to fit the remaining space */
     overflow-y: auto;
     padding: 20px;
-    background-color: #2b2491;
+    background-color: lightgrey;
     display: flex;
     justify-content: center;
     position: relative;
@@ -51,7 +51,7 @@ body {
 .carousel {
     display: flex;
     overflow: hidden;
-    width: 70%;
+    width: 75%;
 }
 
 .carousel-inner {
@@ -85,7 +85,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #007bff;
+    background-color: lightcyan;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -111,7 +111,7 @@ body {
     top: 0;
     left: 0;
     /* Set the container to the left side of the page */
-    width: 30%;
+    width: 25%;
     /* Adjust width as needed */
     height: 100vh;
     /* Full viewport height */
@@ -119,6 +119,8 @@ body {
     /* Red background for easy identification */
     z-index: 10;
     /* Ensures it appears above other content if needed */
+    margin-top: 4.5%;
+    border-radius: 10px lightgrey;
 }
 
 .aside-container h2 {
