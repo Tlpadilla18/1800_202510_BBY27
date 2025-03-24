@@ -5,14 +5,18 @@
     <title>Review/Post Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles/post.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="/styles/post.css">
+>>>>>>> 47ad7f103f47d1386110d6be7cc3fc6e486cf395
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+<<<<<<< HEAD
 
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
@@ -61,34 +65,72 @@
         </div>
     </nav>
 
+=======
+    <!-- Big Image Container -->
+>>>>>>> 47ad7f103f47d1386110d6be7cc3fc6e486cf395
     <div class="big-image-container">
-        <img src="/images/BBY01.jpg" alt="Image 1" class="active">
-        <img src="/images/AM01.jpg" alt="Image 2">
-        <img src="/images/elmo.jpg" alt="Image 3">
-        <!-- Add more images as needed -->
+        <!-- Text Section -->
+        <div class="text-section" id="text-section">
+            <h2 id="text-title">Event 1</h2>
+            <p id="text-description">This is the description for Event 1. Discover the excitement and enjoy the unique experience!</p>
+        </div>
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="/images/club1.png" alt="Image 1" class="active">
+            <img src="/images/club2.png" alt="Image 2">
+            <img src="/images/event1.png" alt="Image 3">
+            <img src="/images/event2.png" alt="Image 4">
+            <img src="/images/event3.png" alt="Image 5">
+        </div>
     </div>
 
     <div class="carousel-container">
         <button class="carousel-button left" onclick="prevSlide()">&#8249;</button>
         <div class="carousel">
             <div class="carousel-inner">
-                <div class="card">
-                    <img src="/images/drink1.jpg" alt="Poster 1">
-                    <div class="card-title">Poster 1</div>
+                <!-- Card 1 -->
+                <div class="card py-2 mx-2" style="width: 18rem">
+                    <img class="card-image card-img-top" src="/images/drink1.jpg" alt="Poster 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Poster 1</h5>
+                        <b class="card-length">Event</b>
+                        <p class="card-text">
+                            This is a brief description for the second poster content.
+                        </p>
+                        <a href="#" class="btn btn-primary card-href">Read more ...</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="/images/drink2.jpg" alt="Poster 2">
-                    <div class="card-title">Poster 2</div>
+
+                <!-- Card 2 -->
+                <div class="card py-2 mx-2" style="width: 18rem">
+                    <img class="card-image card-img-top" src="/images/drink2.jpg" alt="Poster 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Poster 2</h5>
+                        <b class="card-length">Event</b>
+                        <p class="card-text">
+                            This is a brief description for the second poster content.
+                        </p>
+                        <a href="#" class="btn btn-primary card-href">Read more ...</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="/images/drink3.jpg" alt="Poster 3">
-                    <div class="card-title">Poster 3</div>
+
+                <!-- Card 3 -->
+                <div class="card py-2 mx-2" style="width: 18rem">
+                    <img class="card-image card-img-top" src="/images/drink3.jpg" alt="Poster 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Poster 3</h5>
+                        <b class="card-length">Event</b>
+                        <p class="card-text">
+                            Here is the content for the third poster with extra details.
+                        </p>
+                        <a href="#" class="btn btn-primary card-href">Read more ...</a>
+                    </div>
                 </div>
-                <!-- Add more cards here -->
             </div>
         </div>
+        <button class="carousel-button right" onclick="nextSlide()">&#8250;</button>
+    </div>
         <aside class="aside-container">
-            <!-- You can add content inside this container -->
             <h2>Write a review!</h2>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name of club</label>
@@ -110,11 +152,8 @@
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-
-
         </aside>
-        <button class="carousel-button right" onclick="nextSlide()">&#8250;</button>
-    </div>
+        
     <script src="/scripts/post.js"></script>
 
 </body>

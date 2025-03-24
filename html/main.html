@@ -51,7 +51,7 @@
                             My Items
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Messages</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li>
@@ -74,15 +74,15 @@
 
     <header class="topheader">
         <div class="headercontent">
-            <h1>Welcome Friend!</h1>
-            <p>Isabel was here</p>
-            <button>A random button?</button>
+            <h1>Welcome <span id="name-goes-here"></h1>
+            <p>BBY27 was here</p>
+            <button onclick="window.open('/html/random.html', '_blank')">A random button?</button>
         </div>
 
         <!-- <img src="/images/monkeysky.jpg"> -->
     </header>
 
-    <div class="carouselpics">
+    <!-- <div class="carouselpics">
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -125,6 +125,22 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+        </div>
+    </div> -->
+
+    <div class="big-image-container">
+        <!-- Text Section -->
+        <div class="text-section" id="text-section">
+            <h2 id="text-title">Event 1</h2>
+            <p id="text-description">This is the description for Event 1. Discover the excitement and enjoy the unique experience!</p>
+        </div>
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="/images/club1.png" alt="Image 1" class="active">
+            <img src="/images/club2.png" alt="Image 2">
+            <img src="/images/event1.png" alt="Image 3">
+            <img src="/images/event2.png" alt="Image 4">
+            <img src="/images/event3.png" alt="Image 5">
         </div>
     </div>
 
@@ -250,6 +266,7 @@
 
     <!-- Local Javascript -->
     <link rel="stylesheet" href="/scripts/script.js">
+    <script src="/scripts/main.js"></script>
 </body>
 
 </html>

@@ -48,31 +48,23 @@ function updateContent() {
 // Automatically update content every 5 seconds
 setInterval(updateContent, 5000);
 
-
-// Carousel Logic
-const carouselInner = document.querySelector('.carousel-inner');
-const cards = document.querySelectorAll('.carousel-inner .card');
-let carouselIndex = 0;
-
-function updateCarousel() {
-    const offset = -carouselIndex * (cards[0].offsetWidth + 20); // 20px gap
-    carouselInner.style.transform = `translateX(${offset}px)`;
+// Call the function to display the initial content
+function insertNameFromFirestore() {
+    // Check if the user is logged in:
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log(user.uid); // Let's know who the logged-in user is by logging their UID
+            currentUser = db.collection("users").doc(user.uid); // Go to the Firestore document of the user
+            currentUser.get().then(userDoc => {
+                // Get the user name
+                let userName = userDoc.data().name;
+                console.log(userName);
+                //$("#name-goes-here").text(userName); // jQuery
+                document.getElementById("name-goes-here").innerText = userName;
+            })
+        } else {
+            console.log("No user is logged in."); // Log a message when no user is logged in
+        }
+    })
 }
-
-function nextSlide() {
-    if (carouselIndex < cards.length - 1) {
-        carouselIndex++;
-    } else {
-        carouselIndex = 0; // Loop back to the first card
-    }
-    updateCarousel();
-}
-
-function prevSlide() {
-    if (carouselIndex > 0) {
-        carouselIndex--;
-    } else {
-        carouselIndex = cards.length - 1; // Loop back to the last card
-    }
-    updateCarousel();
-}
+insertNameFromFirestore();
