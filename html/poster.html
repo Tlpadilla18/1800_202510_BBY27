@@ -8,20 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<<<<<<< HEAD
-=======
-    <link rel="stylesheet" href="/styles/post.css">
->>>>>>> 47ad7f103f47d1386110d6be7cc3fc6e486cf395
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/post.css">
+    <script src="/scripts/post.js"></script>
 </head>
 
 <body>
-<<<<<<< HEAD
 
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ConnectÜ</a>
+            <a class="navbar-brand" href="main.html">ConnectÜ</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -30,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/html/clubs.html">Clubs</a>
@@ -44,7 +41,7 @@
                             My Items
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Messages</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li>
@@ -65,14 +62,18 @@
         </div>
     </nav>
 
-=======
-    <!-- Big Image Container -->
->>>>>>> 47ad7f103f47d1386110d6be7cc3fc6e486cf395
+    <!-- Review Feed Section -->
+    <div id="review-feed" class="review-feed">
+        <h3>Recent Reviews</h3>
+        <!-- New reviews will appear here -->
+    </div>
+
+    <!-- Big image carousel -->
     <div class="big-image-container">
         <!-- Text Section -->
         <div class="text-section" id="text-section">
-            <h2 id="text-title">Event 1</h2>
-            <p id="text-description">This is the description for Event 1. Discover the excitement and enjoy the unique experience!</p>
+            <h2 id="text-title">Esports Association</h2>
+            <p id="text-description">An eSports group for anybody who enjoys gaming, from beginners to professionals.</p>
         </div>
         <!-- Image Section -->
         <div class="image-section">
@@ -84,11 +85,14 @@
         </div>
     </div>
 
+
+
+    <!---
     <div class="carousel-container">
         <button class="carousel-button left" onclick="prevSlide()">&#8249;</button>
         <div class="carousel">
             <div class="carousel-inner">
-                <!-- Card 1 -->
+                
                 <div class="card py-2 mx-2" style="width: 18rem">
                     <img class="card-image card-img-top" src="/images/drink1.jpg" alt="Poster 1">
                     <div class="card-body">
@@ -100,8 +104,7 @@
                         <a href="#" class="btn btn-primary card-href">Read more ...</a>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
+                
                 <div class="card py-2 mx-2" style="width: 18rem">
                     <img class="card-image card-img-top" src="/images/drink2.jpg" alt="Poster 2">
                     <div class="card-body">
@@ -113,8 +116,7 @@
                         <a href="#" class="btn btn-primary card-href">Read more ...</a>
                     </div>
                 </div>
-
-                <!-- Card 3 -->
+                
                 <div class="card py-2 mx-2" style="width: 18rem">
                     <img class="card-image card-img-top" src="/images/drink3.jpg" alt="Poster 3">
                     <div class="card-body">
@@ -130,31 +132,43 @@
         </div>
         <button class="carousel-button right" onclick="nextSlide()">&#8250;</button>
     </div>
-        <aside class="aside-container">
-            <h2>Write a review!</h2>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Name of club</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Club name...">
-            </div>
-            <div class="card-body">
-                <p>Rate your overall experience:</p>
-                <span class="material-icons star" id="star1">star_outline</span>
-                <span class="material-icons star" id="star2">star_outline</span>
-                <span class="material-icons star" id="star3">star_outline</span>
-                <span class="material-icons star" id="star4">star_outline</span>
-                <span class="material-icons star" id="star5">star_outline</span>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Share your thoughts</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+--->
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
+    <aside class="aside-container">
+        <h2>Write a Review!</h2>
+        <form id="review-form">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name of club/event</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Club name...">
+        </div>
+        <div class="card-body">
+            <p>Rate your overall experience:</p>
+            <div class="star-rating">
+                <span class="material-icons star" id="star1" onclick="setRating(1)">star_outline</span>
+                <span class="material-icons star" id="star2" onclick="setRating(2)">star_outline</span>
+                <span class="material-icons star" id="star3" onclick="setRating(3)">star_outline</span>
+                <span class="material-icons star" id="star4" onclick="setRating(4)">star_outline</span>
+                <span class="material-icons star" id="star5" onclick="setRating(5)">star_outline</span>
             </div>
-        </aside>
-        
-    <script src="/scripts/post.js"></script>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Share your thoughts</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </form>
+
+        <div class="additional-context">
+            <p>Your feedback is very valuable! Please rate how much you enjoyed the event, with 1 star being "poor" and
+                5 stars being "excellent".</p>
+            <p>Feel free to leave a comment below!</p>
+        </div>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
 </body>
 

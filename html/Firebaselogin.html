@@ -24,14 +24,40 @@
 </head>
 
 <body>
-    <!--login-container-->
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="text-center">
-            <h1 class="mb-4">Sign up and get started!</h1>
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Please wait...</div>
+        <div class="auth-container">
+            <h2 class="welcome-title text-center mb-4">Welcome to ConnectU</h2>
+
+            <!-- Toggle between Sign In and Sign Up -->
+            <ul class="nav nav-tabs mb-4 justify-content-center border-0">
+                <li class="nav-item">
+                    <a class="nav-link active" id="signin-tab" data-bs-toggle="tab" href="#signin">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign Up</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- Sign In Form -->
+                <div class="tab-pane fade show active" id="signin">
+                    <div id="firebaseui-auth-container-signin"></div>
+                    <div class="text-center mt-3">
+                        <a href="#" id="resetPassword" class="forgot-password">Forgot password?</a>
+                    </div>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div class="tab-pane fade" id="signup">
+                    <div id="firebaseui-auth-container-signup"></div>
+                </div>
+            </div>
+
+            <div id="loader" class="text-center mt-3">Please wait...</div>
+            <div id="auth-error" class="alert alert-danger mt-3 d-none"></div>
         </div>
     </div>
+
 
     <script src="/scripts/firebaseAPI_TEAM27.js"></script>
     <script src="/scripts/auth.js"></script>
