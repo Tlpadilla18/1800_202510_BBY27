@@ -308,13 +308,13 @@ clubsRef.add({
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-  clubsRef.add({
-    code: "39",
-    name: "(Name of Club)",
-    email: "(club email)",
-    details: "(Details)",
-    last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
+  // clubsRef.add({
+  //   code: "39",
+  //   name: "(Name of Club)",
+  //   email: "(club email)",
+  //   details: "(Details)",
+  //   last_updated: firebase.firestore.FieldValue.serverTimestamp()
+  // });
 
   clubsRef.add({
     code: "IDSC40",

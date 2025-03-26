@@ -48,6 +48,7 @@ function updateContent() {
 // Automatically update content every 5 seconds
 setInterval(updateContent, 5000);
 
+
 // Call the function to display the initial content
 function insertNameFromFirestore() {
     // Check if the user is logged in:
@@ -67,4 +68,5 @@ function insertNameFromFirestore() {
         }
     })
 }
-insertNameFromFirestore();
+insertNameFromFirestore(); // Call the function to display the user name
+updateContent(); // Call the function to display the initial content
