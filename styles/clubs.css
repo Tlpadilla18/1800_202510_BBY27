@@ -187,6 +187,9 @@ bg-primary {
     padding: 2em;
 }
 
+.material-icons{
+    cursor: pointer;
+}
 
 /*  Accordian*/
 

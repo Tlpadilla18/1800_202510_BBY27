@@ -15,6 +15,8 @@
     <!-- link style sheet here -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
@@ -178,8 +180,12 @@
                         <!-- Clubs -->
                         <div class="card-body">
                             <h5 class="card-title">personalized clubs go here</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                            </p>
+                            <h1>Saved Hikes for <span id=name-goes-here></span></h1>
+                            <!-- Here is container for cards  -->
+                            <div class="container">
+                                <div id="clubsCardGroup" class="row row-cols-auto">
+                                </div>
+                            </div>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
 
@@ -215,6 +221,27 @@
 
         </div>
     </div>
+
+
+    <template id="savedCardTemplate">
+        <div class="card mb-3">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                
+                <h5 class="card-name">name of club</h5>
+                <p class="card-text">Placeholder Details</p>
+                
+                <h5 class="card-title">Interested? Save this club! <i class="material-icons">bookmark_border</i></h5>
+                
+                <a href="#" class="card-email">Email</a>
+                <p class="card-time"><small class="text-body-secondary">Last updated 3 mins
+                        ago</small>
+                </p>
+            </div>
+        </div>
+    </template>
+
+
     <footer>
         <div class="footer-icon-container">
             <img src="/images/favicon.ico" alt="Favicon" class="footer-icon">

@@ -424,69 +424,51 @@ function displayCardsDynamically(collection) {
         let data = doc.data();
         let newcard = cardTemplate.content.cloneNode(true);
 
+        let docID = doc.id;
+
         newcard.querySelector(".card-title").innerHTML = data.name;
+        newcard.querySelector(".card-name").innerHTML = data.name;
         newcard.querySelector(".card-email").innerHTML = data.email;
         newcard.querySelector(".card-text").innerHTML = data.details;
         newcard.querySelector(".card-img-top").src = `/images/club/${data.code}.png`;
+
+        newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
+        newcard.querySelector('i').onclick = () => saveBookmark(docID);
 
         container.appendChild(newcard);
       });
 
       // Apply accordion functionality only after all cards are added
       setupAccordions();
+
+      currentUser.get().then(userDoc => {
+        //get the user name
+        var bookmarks = userDoc.data().bookmarks;
+        if (bookmarks.includes(docID)) {
+           document.getElementById('save-' + docID).innerText = 'bookmark';
+        }
+  })
+
     })
     .catch((error) => console.error("Error fetching clubs:", error));
 }
 
 
+function saveBookmark(clubsDocID) {
+  // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+  currentUser.update({
+          // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+          // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(clubsDocID)
+      })
+      // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+      .then(function () {
+          console.log("bookmark has been saved for" + clubsDocID);
+          let iconID = 'save-' + clubsDocID;
+          //console.log(iconID);
+          //this is to change the icon of the hike that was saved to "filled"
+          document.getElementById(iconID).innerText = 'bookmark';
+      });
+}
 
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   displayCardsDynamically("clubs");
-//   setupAccordions();
-// });
-
-// function setupAccordions() {
-//   let acc = document.getElementsByClassName("accordion");
-//   for (let i = 0; i < acc.length; i++) {
-//     acc[i].addEventListener("click", function () {
-//       this.classList.toggle("active");
-//       var panel = this.nextElementSibling;
-//       if (panel.style.maxHeight) {
-//         panel.style.maxHeight = null; // Collapse the panel
-//       } else {
-//         panel.style.maxHeight = panel.scrollHeight + "px"; // Expand the panel
-//       }
-//     });
-//   }
-// }
-
-// function displayCardsDynamically(collection) {
-//   let cardTemplate = document.getElementById("accordionTemplate"); // Fix the template ID
-//   let container = document.getElementById(collection + "-go-here");
-
-//   if (!cardTemplate || !container) {
-//     console.error("Missing template or container element.");
-//     return;
-//   }
-
-//   db.collection(collection).get()
-//     .then(allClubs => {
-//       allClubs.forEach(doc => {
-//         let data = doc.data();
-//         let newcard = cardTemplate.content.cloneNode(true);
-
-//         newcard.querySelector('.card-title').innerHTML = data.name;
-//         newcard.querySelector('.card-email').innerHTML = data.email;
-//         newcard.querySelector('.card-text').innerHTML = data.details;
-//         newcard.querySelector('.card-img-top').src = `/images/${data.code}.jpg`;
-
-//         console.log("Appending card:", newcard);
-//         container.appendChild(newcard);
-        
-//         // Re-apply accordion functionality to the new card after appending
-//         setupAccordions();
-//       });
-//     })
-//     .catch(error => console.error("Error fetching clubs:", error));
-// }
+saveBookmark();
