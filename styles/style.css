@@ -245,3 +245,8 @@ bg-primary {
     margin: auto;
     padding: 2em;
 }
+
+.card-body1 {
+    width: 100%;
+}
+

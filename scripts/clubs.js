@@ -385,6 +385,21 @@ clubsRef.add({
 
 // writeClubs();
 
+var currentUser;
+
+function doAll() {
+  firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+          currentUser = db.collection("users").doc(user.uid); //global
+          console.log(currentUser);
+      } else {
+          // No user is signed in.
+          console.log("No user is signed in");
+          window.location.href = "FireBaselogin.html";
+      }
+  });
+}
+doAll();
 
 document.addEventListener("DOMContentLoaded", function () {
   displayCardsDynamically("clubs");
@@ -441,6 +456,7 @@ function displayCardsDynamically(collection) {
       // Apply accordion functionality only after all cards are added
       setupAccordions();
 
+      
       currentUser.get().then(userDoc => {
         //get the user name
         var bookmarks = userDoc.data().bookmarks;
@@ -455,7 +471,8 @@ function displayCardsDynamically(collection) {
 
 
 function saveBookmark(clubsDocID) {
-  // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+
+  // Manage the backend process to store the clubsDocID in the database, recording which hike was bookmarked by the user.
   currentUser.update({
           // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
           // This method ensures that the ID is added only if it's not already present, preventing duplicates.

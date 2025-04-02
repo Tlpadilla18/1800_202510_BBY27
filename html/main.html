@@ -179,14 +179,12 @@
 
                         <!-- Clubs -->
                         <div class="card-body">
-                            <h5 class="card-title">personalized clubs go here</h5>
-                            <h1>Saved Hikes for <span id=name-goes-here></span></h1>
+                            <h5 class="card-title">Saved Clubs</h5>
                             <!-- Here is container for cards  -->
-                            <div class="container">
-                                <div id="clubsCardGroup" class="row row-cols-auto">
+                            <div class="container1">
+                                <div id="clubsCardGroup">
                                 </div>
-                            </div>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>  
                         </div>
 
                     </div>
@@ -223,16 +221,14 @@
     </div>
 
 
+    <!-- Template 1 -->
     <template id="savedCardTemplate">
-        <div class="card mb-3">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                
-                <h5 class="card-name">name of club</h5>
-                <p class="card-text">Placeholder Details</p>
-                
-                <h5 class="card-title">Interested? Save this club! <i class="material-icons">bookmark_border</i></h5>
-                
+        <div class="card py-2 mx-2 bg-light">
+            <img class="card-image card-img-top" src=" ..." alt="...">
+            <div class="card-body1">
+                <h5 class="card-name">Card title</h5>
+                <p class="card-text">placeholder</p>
+                <br>
                 <a href="#" class="card-email">Email</a>
                 <p class="card-time"><small class="text-body-secondary">Last updated 3 mins
                         ago</small>
@@ -240,6 +236,25 @@
             </div>
         </div>
     </template>
+
+    <!-- Template 2 -->
+    <!-- <template id="savedCardTemplate">
+        <div class="card mb-3">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+
+                <h5 class="card-name">name of club</h5>
+                <p class="card-text">Placeholder Details</p>
+
+                <i class="material-icons">bookmark_border</i>
+
+                <a href="#" class="card-email">Email</a>
+                <p class="card-time"><small class="text-body-secondary">Last updated 3 mins
+                        ago</small>
+                </p>
+            </div>
+        </div>
+    </template> -->
 
 
     <footer>
@@ -299,7 +314,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link rel="stylesheet" href="/scripts/script.js">
+    <!-- <link rel="stylesheet" href="/scripts/script.js"> -->
     <script src="/scripts/firebaseAPI_TEAM27.js"></script>
     <script src="/scripts/main.js"></script>
 </body>
