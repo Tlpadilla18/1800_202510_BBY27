@@ -1,6 +1,6 @@
 document.getElementById("searchBar").addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-      searchClubs();
+    searchClubs();
   }
 });
 
@@ -14,24 +14,24 @@ function searchClubs() {
   let bestMatch = null;
 
   clubs.forEach(cardTitle => {
-      let clubName = cardTitle.textContent.toLowerCase().trim();
-      if (clubName.includes(filter)) {
-          bestMatch = cardTitle; // Prioritize first strong match
-      }
+    let clubName = cardTitle.textContent.toLowerCase().trim();
+    if (clubName.includes(filter)) {
+      bestMatch = cardTitle; // Prioritize first strong match
+    }
   });
 
   if (bestMatch) {
-      bestMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+    bestMatch.scrollIntoView({ behavior: "smooth", block: "center" });
 
-      // Subtle highlight effect
-      bestMatch.style.backgroundColor = "#fffcdb"; // Light pastel yellow
-      bestMatch.style.transition = "background-color 1s ease-out";
+    // Subtle highlight effect
+    bestMatch.style.backgroundColor = "#fffcdb"; // Light pastel yellow
+    bestMatch.style.transition = "background-color 1s ease-out";
 
-      setTimeout(() => {
-          bestMatch.style.backgroundColor = "transparent";
-      }, 2000);
+    setTimeout(() => {
+      bestMatch.style.backgroundColor = "transparent";
+    }, 2000);
   } else {
-      alert("No matching club found. Try refining your search!");
+    alert("No matching club found. Try refining your search!");
   }
 }
 
@@ -61,7 +61,7 @@ function writeClubs() {
   });
 
 
-    clubsRef.add({
+  clubsRef.add({
     code: "ACC03",
     name: "Architectural Connections Club",
     email: "archconnections.bcit@gmail.com",
@@ -142,7 +142,7 @@ function writeClubs() {
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-clubsRef.add({
+  clubsRef.add({
     code: "ESS13",
     name: "Engineering Students’ Society",
     email: "ess.bcit@gmail.com",
@@ -150,7 +150,7 @@ clubsRef.add({
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-clubsRef.add({
+  clubsRef.add({
     code: "EA014",
     name: "Esports Association",
     email: "ea.bcit@gmail.com",
@@ -166,7 +166,7 @@ clubsRef.add({
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-clubsRef.add({
+  clubsRef.add({
     code: "FC16",
     name: "Firearms Club",
     email: "bcitsafirearmsclub@gmail.com",
@@ -182,7 +182,7 @@ clubsRef.add({
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-clubsRef.add({
+  clubsRef.add({
     code: "MA18",
     name: "Marketing Association",
     email: "ma.bcit@gmail.com",
@@ -190,7 +190,7 @@ clubsRef.add({
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-clubsRef.add({
+  clubsRef.add({
     code: "REA19",
     name: "Real Estate Association",
     email: "bcitrea@outlook.com",
@@ -198,7 +198,7 @@ clubsRef.add({
     last_updated: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-clubsRef.add({
+  clubsRef.add({
     code: "HRA20",
     name: "Human Resources Association",
     email: "bcithra@gmail.com",
@@ -431,14 +431,14 @@ var currentUser;
 
 function doAll() {
   firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-          currentUser = db.collection("users").doc(user.uid); //global
-          console.log(currentUser);
-      } else {
-          // No user is signed in.
-          console.log("No user is signed in");
-          window.location.href = "FireBaselogin.html";
-      }
+    if (user) {
+      currentUser = db.collection("users").doc(user.uid); //global
+      console.log(currentUser);
+    } else {
+      // No user is signed in.
+      console.log("No user is signed in");
+      window.location.href = "FireBaselogin.html";
+    }
   });
 }
 doAll();
@@ -480,7 +480,6 @@ function displayCardsDynamically(collection) {
       allClubs.forEach((doc) => {
         let data = doc.data();
         let newcard = cardTemplate.content.cloneNode(true);
-
         let docID = doc.id;
 
         newcard.querySelector(".card-title").innerHTML = data.name;
@@ -491,22 +490,19 @@ function displayCardsDynamically(collection) {
 
         newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
         newcard.querySelector('i').onclick = () => saveBookmark(docID);
-
+        currentUser.get().then(userDoc => {
+          //get the user name
+          var bookmarks = userDoc.data().bookmarks;
+          if (bookmarks.includes(docID)) {
+            document.getElementById('save-' + docID).innerText = 'bookmark';
+          }
+        })
         container.appendChild(newcard);
       });
 
       // Apply accordion functionality only after all cards are added
       setupAccordions();
-      
 
-      
-      currentUser.get().then(userDoc => {
-        //get the user name
-        var bookmarks = userDoc.data().bookmarks;
-        if (bookmarks.includes(docID)) {
-           document.getElementById('save-' + docID).innerText = 'bookmark';
-        }
-  })
 
     })
     .catch((error) => console.error("Error fetching clubs:", error));
@@ -517,18 +513,18 @@ function saveBookmark(clubsDocID) {
 
   // Manage the backend process to store the clubsDocID in the database, recording which hike was bookmarked by the user.
   currentUser.update({
-          // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-          // This method ensures that the ID is added only if it's not already present, preventing duplicates.
-          bookmarks: firebase.firestore.FieldValue.arrayUnion(clubsDocID)
-      })
-      // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
-      .then(function () {
-          console.log("bookmark has been saved for" + clubsDocID);
-          let iconID = 'save-' + clubsDocID;
-          //console.log(iconID);
-          //this is to change the icon of the hike that was saved to "filled"
-          document.getElementById(iconID).innerText = 'bookmark';
-      });
+    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+    // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+    bookmarks: firebase.firestore.FieldValue.arrayUnion(clubsDocID)
+  })
+    // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+    .then(function () {
+      console.log("bookmark has been saved for" + clubsDocID);
+      let iconID = 'save-' + clubsDocID;
+      //console.log(iconID);
+      //this is to change the icon of the hike that was saved to "filled"
+      document.getElementById(iconID).innerText = 'bookmark';
+    });
 }
 
-saveBookmark();
+// saveBookmark();
