@@ -1,3 +1,45 @@
+document.getElementById("searchBar").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+      searchClubs();
+  }
+});
+
+document.getElementById("searchButton").addEventListener("click", function () {
+  searchClubs();
+});
+
+function searchClubs() {
+  let filter = document.getElementById("searchBar").value.toLowerCase().trim();
+  let clubs = document.querySelectorAll(".card-title");
+  let bestMatch = null;
+
+  clubs.forEach(cardTitle => {
+      let clubName = cardTitle.textContent.toLowerCase().trim();
+      if (clubName.includes(filter)) {
+          bestMatch = cardTitle; // Prioritize first strong match
+      }
+  });
+
+  if (bestMatch) {
+      bestMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      // Subtle highlight effect
+      bestMatch.style.backgroundColor = "#fffcdb"; // Light pastel yellow
+      bestMatch.style.transition = "background-color 1s ease-out";
+
+      setTimeout(() => {
+          bestMatch.style.backgroundColor = "transparent";
+      }, 2000);
+  } else {
+      alert("No matching club found. Try refining your search!");
+  }
+}
+
+
+
+
+
+
 
 function writeClubs() {
   var clubsRef = db.collection("clubs")
@@ -455,6 +497,7 @@ function displayCardsDynamically(collection) {
 
       // Apply accordion functionality only after all cards are added
       setupAccordions();
+      
 
       
       currentUser.get().then(userDoc => {

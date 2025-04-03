@@ -137,11 +137,23 @@
     </div>
 
     <!-- CLUB LIST -->
-    <div class="clubList">
+    <!-- <div class="clubList">
         <h3>Club List</h3>
+        <input type="text" id="searchBar" class="search-bar" placeholder="Search clubs...">
         <div id="clubs-go-here" class="row row-cols-auto">
         </div>
+    </div>  -->
+    
+    <div class="club-list-container">
+        <div class="club-list-header">
+            <h3>Club List</h3>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search clubs...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="clubs-go-here" class="row row-cols-auto"></div>
     </div>
+    
+    
 
     <!-- TEMPLATE FOR ACCORDION AND CARDS -->
     <template id="accordionTemplate">

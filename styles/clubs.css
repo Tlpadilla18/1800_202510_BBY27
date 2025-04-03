@@ -12,6 +12,43 @@ body {
     flex: 1;
 }
 
+.club-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Space betwwen Club list and seach bar. */
+    margin: auto;
+}
+
+.search-bar {
+    width: 200px; /* Keep original size */
+    padding: 8px;
+    border: 1px solid #1DA1F2;
+    border-radius: 5px;
+    margin-left: auto; /* Space between search bar and button */
+}
+
+#searchButton {
+    padding: 10px 15px;
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #147AB7; /* Slightly darker on hover */
+}
+
+.club-list-container {
+    width: 60%;
+    margin: auto;
+}
+
+
+
 footer {
     background-color: #f1f1f1;
     display: flex;
@@ -196,7 +233,8 @@ bg-primary {
 
 .clubList {
     width: 60%;
-    margin: auto;
+    margin: 40px auto;
+    display: flex;
 }
 
 .accordion {
