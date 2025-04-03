@@ -1,0 +1,55 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Center and Style Containers */
+.about-intro, .about-section, .contact-section {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Spacing between sections */
+}
+
+/* Footer Sticks to Bottom */
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Social Media Icons */
+.social-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #8a6d3b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-intro, .about-section, .contact-section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+}
