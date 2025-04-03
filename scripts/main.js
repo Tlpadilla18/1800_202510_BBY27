@@ -27,24 +27,26 @@ const textDescription = document.getElementById("text-description");
 // Array holding titles and descriptions for each image
 const data = [
     {
-        title: "Event 1",
-        description: "This is the description for Event 1. Discover the excitement and enjoy the unique experience!"
+        title: "Girl Code Club", 
+        description: "Are you passionate about coding, tech, and building a supportive community? The Girl Code Club is looking for new members! Whether you're a seasoned programmer or just starting your coding journey, this is the perfect space to learn, collaborate, and grow together."
+        
     },
     {
-        title: "Event 2",
-        description: "This is the description for Event 2. Be part of something extraordinary and unforgettable!"
+        title: "After School Debate Club",
+        description: "Do you love discussing big ideas, analyzing different perspectives, and sharpening your public speaking skills? The After-School Debate Club is looking for passionate thinkers like YOU! Whether you’re an experienced debater or brand new to the art of argument, this is the perfect space to refine your skills, engage in thought-provoking discussions, and build confidence."
     },
     {
-        title: "Event 3",
-        description: "This is the description for Event 3. Explore the wonders and join the celebration!"
+        title: "School Dance Competition",
+        description: "Experience the thrill of competition and the joy of dance! Join us for an exciting event where talented dancers showcase their skills and creativity on stage."
+        
     },
     {
-        title: "Event 4",
-        description: "This is the description for Event 4. An event that combines excitement and fun!"
+        title: "Back to School Party",
+        description: "Get ready to reunite, make new friends, and start the school year with an electrifying celebration! Join us for an unforgettable night filled with music, games, and good vibes."
     },
     {
-        title: "Event 5",
-        description: "This is the description for Event 5. Experience the thrill and enjoy the moment!"
+        title: "School Dance Competition",
+        description: "Experience the thrill of competition and the joy of dance! Join us for an exciting event where talented dancers showcase their skills and creativity on stage."
     }
 ];
 
