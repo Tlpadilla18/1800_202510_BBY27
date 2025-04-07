@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof firebase === 'undefined' || !firebase.apps.length) {
         console.error('Firebase not loaded');
@@ -146,5 +147,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
-
-

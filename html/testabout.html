@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Post Page</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="/styles/clubs.css"> -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            background-color: grey;
+            margin: 20px;
+            height: 250px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 25vh;
+            object-fit: cover;
+            border: 1px solid #1b1919;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+            margin-left: 10px;
+        }
+
+        .card-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            /* Limit text to 4 lines */
+            text-overflow: ellipsis;
+        }
+
+        .form-control {
+            width: 200px;
+            /* Set a fixed width for the input field */
+            margin-right: 10px;
+        }
+        .btn-outline-success {
+            margin-right: 10px;
+        }
+
+
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- main page div -->
+    <!-- Nav Bar -->
+
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main.html">ConnectÜ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="clubs.html">Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="poster.html">Posts</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            My Items
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="about.html">About</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="Firebaselogin.html">SignOut</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Light/Dark mode?</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <form class="d-flex flex-wrap" role="search">
+        <input class="form-control flex-grow-1 mb-2 mb-lg-0 me-2" type="search" placeholder="Search" aria-label="Search"
+            id="searchInput">
+        <button class="btn btn-outline-success mb-2 mb-lg-0 me-2" type="button" id="searchButton">Search</button>
+        <button class="btn btn-outline-success mb-2 mb-lg-0 me-2" type="button" id="clearButton">Clear</button>
+    </form>
+
+    <div class="row g-0">
+        <!-- First Card -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="/images/event1.png" class="img-fluid rounded-start" alt="Beauty Competition">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body" style="position: relative; height: 100%;">
+                            <h5 class="card-title">Beauty Competition</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary"
+                                    style="position: absolute; bottom: 60px;">Category: Events</small></p>
+                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 10px;">Go
+                                somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Card -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="/images/event2.png" class="img-fluid rounded-start" alt="Art Exhibit">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body" style="position: relative; height: 100%;">
+                            <h5 class="card-title">Art Exhibit</h5>
+                            <p class="card-text">Explore stunning artworks in this one-of-a-kind exhibit. Don't miss
+                                out!</p>
+                            <p class="card-text"><small class="text-body-secondary"
+                                    style="position: absolute; bottom: 60px;">Category: Events</small></p>
+                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 10px;">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Card -->
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-4">
+                        <img src="/images/event3.png" class="img-fluid rounded-start" alt="Music Festival">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body" style="position: relative; height: 100%;">
+                            <h5 class="card-title">Music Festival</h5>
+                            <p class="card-text">Get ready to groove at this year's vibrant music festival!</p>
+                            <p class="card-text"><small class="text-body-secondary"
+                                    style="position: absolute; bottom: 60px;">Category: Events</small></p>
+                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 10px;">Join now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("searchInput"); // Search input field
+        const cardContainers = document.querySelectorAll(".row .col-sm-12"); // Targets card containers (columns)
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase().trim(); // Get the search input and normalize to lowercase
+            cardContainers.forEach(container => {
+                const cardContent = container.innerText.toLowerCase(); // Get the text content of the entire card
+                if (cardContent.includes(query)) {
+                    container.style.display = "block"; // Show container if query matches
+                } else {
+                    container.style.display = "none"; // Hide container if no match
+                }
+            });
+        });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("searchInput");
+        const clearButton = document.getElementById("clearButton");
+        const cardContainers = document.querySelectorAll(".row .col-sm-12");
+
+        // Clear search input and reset card display
+        clearButton.addEventListener("click", () => {
+            searchInput.value = ""; // Clear input field
+            cardContainers.forEach(container => {
+                container.style.display = "block"; // Show all cards
+                container.querySelector(".card-body").innerHTML = container.querySelector(".card-body").innerText; // Reset highlights
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("searchInput");
+        const cardContainers = document.querySelectorAll(".row .col-sm-12");
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase().trim();
+            cardContainers.forEach(container => {
+                const category = container.querySelector(".text-body-secondary").innerText.toLowerCase(); // Search by category
+                const cardContent = container.innerText.toLowerCase();
+                if (category.includes(query) || cardContent.includes(query)) {
+                    container.style.display = "block"; // Show cards matching category or content
+                } else {
+                    container.style.display = "none"; // Hide non-matching cards
+                }
+            });
+        });
+    });
+
+</script>
+
+</html>

@@ -1,206 +1,72 @@
-html, body {
-    height: 100%;
+/* General Reset */
+* {
     margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.main {
-    flex: 1;
-}
-
-footer {
-    background: rgba(255, 248, 240, 0.3);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.footer-icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text */
-    margin-left: 20px; /* Add left margin to move closer to the left margin */
-}
-
-.footer-icon {
-    max-height: 40px; /* Adjust this value as needed */
-    object-fit: contain;
-    vertical-align: middle;
-}
-
-.footer-icon-text {
-    font-size: 12px; /* Adjust this value as needed */
-    margin-top: 5px; /* Add space between the icon and the text */
-    display: flex;
-    justify-content: center; /* Center the text horizontally */
-    width: 100%; /* Make the text take the full width */
-}
-
-.footer-about-title {
-    font-size: 16px; /* Adjust this value as needed */
-    margin-top: 10px; /* Add space between the text and the title */
-    text-align: left; /* Align text to the left */
-    width: 100%; /* Make the title take the full width */
-}
-
-.footer-about-text {
-    font-size: 14px; /* Adjust this value as needed */
-    margin-top: 10px; /* Add space between the title and the text */
-    max-width: 300px; /* Adjust this value as needed */
-    text-align: left; /* Align text to the left */
-    width: 100%; /* Make the text take the full width */
-}
-
-.footer-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: center; /* Center the links horizontally */
-    flex-grow: 1;
-}
-
-.contact-us {
-    display: flex;
-    flex-direction: column; /* Change to column to align icons vertically */
-    align-items: center;
-    gap: 10px; /* Add space between the link and the icons */
-}
-
-.contact-us-title {
-    font-size: 16px; /* Adjust this value as needed */
-    margin-top: 10px; /* Add space between the text and the title */
-    text-align: center; /* Center the title */
-    width: 100%; /* Make the title take the full width */
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: row; /* Align icons horizontally */
-    gap: 10px; /* Add space between the icons */
-    justify-content: center; /* Center the icons horizontally */
-}
-
-.contact-info {
-    list-style: none; /* Remove bullet points */
     padding: 0;
-    margin-top: 10px; /* Add space between the icons and the list */
-    text-align: center; /* Center text */
-}
-
-.contact-info li {
-    margin-bottom: 5px; /* Add space between list items */
-}
-
-.contact-info a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.footer-social-link {
-    text-decoration: none;
-    color: inherit;
-    font-size: 20px; /* Adjust the size of the icon */
-}
-
-.footer-social-link i {
-    vertical-align: middle;
-}
-
-.footer-social-link:hover .fa-instagram {
-    color: #E1306C; /* Instagram brand color */
-}
-
-.footer-social-link:hover .fa-twitter {
-    color: #1DA1F2; /* Twitter brand color */
-}
-
-.footer-social-link:hover .fa-discord {
-    color: #7289DA; /* Discord brand color */
-}
-
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.footer-right .footer-link {
-    margin-top: 5px; /* Add space between the copyright and the privacy policy link */
-}
-
-.footer-copyright {
-    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(193, 222, 231);
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-bg-primary {
-    color: turquoise;
+/* Navbar */
+.navbar {
+    background: rgba(255, 248, 240, 0.9);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Nav Bar*/
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8a6d3b;
+}
+
+.nav-link {
+    color: #8a6d3b;
+}
+
+.nav-link:hover {
+    color: #5c4636;
+}
 
 /* Header */
-
 .topheader {
     height: 300px;
     background-image: url("/images/sparkels.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .headercontent {
     text-align: center;
     padding: 6em;
-    margin: auto;
+    color: #4a4a4a;
 }
-
-/* Carousel
-.carouselpics {
-    width: 60%;
-    margin: auto;
-    padding: 2em;
-}
-
-.carousel-inner img {
-    height: 400px;
-    border-radius: 1%;
-} */
 
 /* Big Image Container */
 .big-image-container {
     display: flex;
-    margin: 0 20px; /* Add margin to the sides */
-    margin-top: 20px; /* Add margin to the top */
-    flex-direction: row-reverse; /* Reverse the order of the children */
+    margin: 5vh 20% 5vh 20%; /* Center the container */
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     height: 50vh;
-    position: center; /* Space for aside container */
     padding: 20px;
     background: rgba(240, 250, 255, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Text Section */
 .text-section {
     flex: 1;
-    padding-left: 20px; /* Adjust to add space between text and image */
-    color: #5990b4;
+    padding-left: 0px;
+    color: #8a6d3b;
 }
 
 .text-section h2 {
@@ -216,7 +82,6 @@ bg-primary {
 /* Image Section */
 .image-section {
     flex: 1;
-    position: relative;
     display: flex;
     height: 45vh;
     justify-content: center;
@@ -224,11 +89,10 @@ bg-primary {
 }
 
 .image-section img {
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 10px;
-    border: 2px solid #5990b4;
-    object-fit: cover;
+    height: 45vh;
+    border-radius: 15px;
+    border: 2px solid #8a6d3b;
+    object-fit: contain;
     transition: opacity 1s ease-in-out, transform 0.5s ease;
     opacity: 0;
     position: absolute;
@@ -239,9 +103,212 @@ bg-primary {
     transform: scale(1.05);
 }
 
-/* Content Card */
+/* Content Card Styles */
+.container1 {
+    display: flex;
+    justify-content: center; /* Keeps cards centered */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 25px; /* Space between cards */
+    width: 100%; /* Expands container to full width */
+    max-width: none; /* Removes any restrictions on width */
+    margin: 5vh auto; /* Keeps it centered */
+    padding: 0 5%; /* Adds spacing to prevent cards from touching screen edges */
+}
+
+/* Ensure Cards Align Side by Side */
+.card {
+    max-width: 75%; /* Sets a max width for the card */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
 .contentcard {
-    width: 60%;
-    margin: auto;
-    padding: 2em;
+    margin: 5vh 0 5vh 20%;
+    max-width: 100%; /* Sets a max width for the card */
+}
+
+#clubsCardGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+  
+  
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-image {
+    width: 100%;
+    height: 180px; /* Keeps consistent image height */
+    object-fit: cover;
+    border-radius: 12px 12px 0 0; /* Rounded top edges */
+}
+
+/* Card Body */
+.card-body1 {
+    padding: 15px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0; /* Rounded top edges */
+    max-width: 350px;
+}
+
+/* Card Title */
+.card-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+/* Card Text */
+.card-text {
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+/* Email Link */
+.card-email {
+    display: inline-block;
+    font-size: 14px;
+    color: #5990b4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.card-email:hover {
+    color: #48779a;
+}
+
+/* Timestamp */
+.card-time {
+    font-size: 12px;
+    color: #999999;
+    margin-top: 5px;
+}
+
+
+/* Footer */
+footer {
+    background: rgba(255, 248, 240, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Allows it to grow while maintaining positioning */
+}
+
+.footer-icon {
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    margin: 0 20px; /* Add margin to the links section */
+}
+
+.footer-icon-text {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #8a6d3b;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.footer-copyright {
+    white-space: nowrap;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1000px) {
+    .big-image-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 70vh;
+        margin: 5vh 5%;
+        width: auto;
+    }
+
+    .image-section {
+        height: auto;
+        justify-content: center;
+    }
+    .image-section img {
+        height: 25vh;
+        max-width: 90%;
+    }
+
+    .text-section {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin: 5vh auto;
+    }
+
+    .contentcard {
+        margin: 5vh 0 5vh 0;
+        max-width: 100%;
+    }
+
+    
+
+    .card {
+         /* Add margin to the cards */
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .footer-icon-container,
+    .footer-links,
+    .footer-right {
+        flex: none; /* Prevent unwanted stretching */
+        width: 100%; /* Ensure sections stay properly positioned */
+        margin-bottom: 10px; /* Add space between sections */
+        
+    }
 }
