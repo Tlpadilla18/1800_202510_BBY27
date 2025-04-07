@@ -76,85 +76,80 @@ function prevSlide() {
     }
     updateCarousel();
 }
-/** 
-// Star icon and rating logic
-let currentRating = 0; 
 
-// Function to set the rating visually based on the clicked star
-function setRating(rating) {
-    currentRating = rating;
+
+// Function to load reviews from localStorage and display them
+function loadReviews() {
+    const reviewFeed = document.getElementById('review-feed');
     
-    for (let i = 1; i <= 5; i++) {
-        const star = document.getElementById('star' + i);
-        star.classList.remove('selected'); 
-    }
-    for (let i = 1; i <= rating; i++) {
-        const star = document.getElementById('star' + i);
-        star.classList.add('selected'); 
-    }
-}
+    // Get reviews from localStorage (if any)
+    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
-// Function to get the current rating from the stars
-function getRating() {
+    // Clear existing reviews and re-display all saved reviews
+    reviewFeed.innerHTML = '<h3>Recent Reviews</h3>';  // Title for the reviews section
     
-    for (let i = 1; i <= 5; i++) {
-        if (document.getElementById(`star${i}`).classList.contains('selected')) {
-            return i;
-        }
-    }
-    return null; 
-}
-
-// Handle the form submission
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('review-form'); 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-
-        const clubName = document.getElementById('exampleFormControlInput1').value;
-        const rating = getRating(); 
-        const reviewText = document.getElementById('exampleFormControlTextarea1').value;
-
-        if (!clubName || !rating || !reviewText) {
-            alert("Please complete all fields.");
-            return;
-        }
-
-        const reviewData = {
-            clubName: clubName,
-            rating: rating,
-            reviewText: reviewText
-        };
-
-        console.log('Review submitted:', reviewData);
-
-        const reviewFeed = document.getElementById('review-feed');
+    reviews.forEach((review, index) => {
         const reviewElement = document.createElement('div');
-        reviewElement.classList.add('review');
-        reviewElement.innerHTML = `
-            <h4>${clubName} - ${rating} Stars</h4>
-            <p>${reviewText}</p>
-        `;
-        reviewFeed.appendChild(reviewElement);
-
-        form.reset();
-
+        reviewElement.classList.add('review-item');
+        
+        // Create the star rating HTML (as icons)
+        let starsHTML = '';
         for (let i = 1; i <= 5; i++) {
-            const star = document.getElementById('star' + i);
-            star.classList.remove('selected');
+            starsHTML += `<span class="material-icons star ${i <= review.rating ? 'selected' : ''}">star</span>`;
         }
-    });
-});*/
 
+        // Insert review content (including the stars) and "X" for deletion at the end
+        reviewElement.innerHTML = `
+            <h5>${review.clubName} - ${starsHTML}</h5>
+            <p>${review.reviewText}</p>
+            <span class="delete-x" data-index="${index}">&times;</span> <!-- "X" symbol at the end -->
+        `;
+
+        // Append the review to the feed
+        reviewFeed.appendChild(reviewElement);
+    });
+
+    // Attach event listeners to "X" (delete) elements
+    document.querySelectorAll('.delete-x').forEach(span => {
+        span.addEventListener('click', function(event) {
+            const indexToDelete = event.target.getAttribute('data-index');
+            deleteReview(indexToDelete);
+        });
+    });
+}
+
+// Function to delete a review from localStorage and update the display
+function deleteReview(index) {
+    // Get reviews from localStorage
+    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+    // Remove the review at the specified index
+    reviews.splice(index, 1);
+
+    // Save the updated reviews back to localStorage
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+
+    // Reload reviews to update the page
+    loadReviews();
+}
+
+// Global variable to store the current rating
+let currentRating = 0;
+
+// Handle the form submission to add new review
 document.addEventListener("DOMContentLoaded", function() {
+    // Load reviews from localStorage when the page is loaded
+    loadReviews();
+
     const form = document.getElementById('review-form');
     
+    // Handle the form submission
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
         // Collect the form data
         const clubName = document.getElementById('exampleFormControlInput1').value;
-        const rating = getRating(); // Get the selected rating (1 to 5)
+        const rating = currentRating;  // Use the stored rating
         const reviewText = document.getElementById('exampleFormControlTextarea1').value;
 
         // Validate the data (optional but recommended)
@@ -163,66 +158,50 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Create the review object (you could send this to the server)
+        // Create the review object
         const reviewData = {
             clubName: clubName,
             rating: rating,
             reviewText: reviewText
         };
 
-        // Create the review element to be appended to the review feed
-        const reviewFeed = document.getElementById('review-feed');
-        const reviewElement = document.createElement('div');
-        reviewElement.classList.add('review-item');
+        // Retrieve reviews from localStorage (if any)
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
-        // Create the star rating HTML (as icons)
-        let starsHTML = '';
-        for (let i = 1; i <= 5; i++) {
-            // If the star index is less than or equal to the rating, mark it as selected
-            starsHTML += `<span class="material-icons star ${i <= rating ? 'selected' : ''}">star</span>`;
-        }
+        // Add the new review to the reviews array
+        reviews.push(reviewData);
 
-        // Insert review content (including the stars)
-        reviewElement.innerHTML = `
-            <h5>${clubName} - ${starsHTML}</h5>
-            <p>${reviewText}</p>
-        `;
+        // Save the updated reviews array back to localStorage
+        localStorage.setItem('reviews', JSON.stringify(reviews));
 
-        // Append the review to the feed
-        reviewFeed.appendChild(reviewElement);
-
-        // Optionally, reset the form after submission
+        // Clear the form
         form.reset();
         resetStars(); // Reset the stars to default after submitting the form
+
+        // Reload the reviews to include the new one
+        loadReviews();
     });
 });
 
-// Function to get the selected rating
-function getRating() {
-    // Loop through the stars and find the one with the 'selected' class
-    for (let i = 1; i <= 5; i++) {
-        if (document.getElementById(`star${i}`).classList.contains('selected')) {
-            return i;
-        }
-    }
-    return null; // Return null if no star is selected
-}
-
-// Reset the stars after review submission
+// Function to reset the stars after review submission
 function resetStars() {
     for (let i = 1; i <= 5; i++) {
-        document.getElementById(`star${i}`).classList.remove('selected');
+        document.getElementById(`star${i}`).textContent = 'star_outline';  // Reset all stars
     }
+    currentRating = 0; 
 }
 
-// Set rating when a star is clicked
+// Function to set the current rating
 function setRating(rating) {
+    currentRating = rating;
+
+    // Update the star icons based on the rating
     for (let i = 1; i <= 5; i++) {
-        const star = document.getElementById('star' + i);
+        const star = document.getElementById(`star${i}`);
         if (i <= rating) {
-            star.classList.add('selected');
+            star.textContent = 'star';  // Filled star
         } else {
-            star.classList.remove('selected');
+            star.textContent = 'star_outline';  // Empty star
         }
     }
 }
