@@ -1,52 +1,90 @@
-// Select all necessary elements
-const images = document.querySelectorAll(".image-section img");
-const textTitle = document.getElementById("text-title");
-const textDescription = document.getElementById("text-description");
-
-// Array holding titles and descriptions for each image
-const data = [
-    {
-        title: "Event 1",
-        description: "This is the description for Event 1. Discover the excitement and enjoy the unique experience!"
-    },
-    {
-        title: "Event 2",
-        description: "This is the description for Event 2. Be part of something extraordinary and unforgettable!"
-    },
-    {
-        title: "Event 3",
-        description: "This is the description for Event 3. Explore the wonders and join the celebration!"
-    },
-    {
-        title: "Event 4",
-        description: "This is the description for Event 4. An event that combines excitement and fun!"
-    },
-    {
-        title: "Event 5",
-        description: "This is the description for Event 5. Experience the thrill and enjoy the moment!"
+// Dropdown Menu Logic
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.querySelector('.dropdown-button');
+    const asideContainer = document.querySelector('.aside-container');
+    const closeButton = document.querySelector('.close-button');
+  
+    function toggleAside() {
+      if (window.innerWidth <= 750) {
+        asideContainer.style.display = 'block';
+      }
     }
-];
+  
+    function closeAside() {
+      asideContainer.style.display = 'none';
+    }
+  
+    if (dropdownButton && asideContainer && closeButton) {
+      dropdownButton.addEventListener('click', toggleAside);
+      closeButton.addEventListener('click', closeAside);
+    } else {
+      console.error("Element(s) not found. Check your class names!");
+    }
+  });
+  
 
-let currentIndex = 0;
+  
 
-// Function to update the active image and text
-function updateContent() {
-    // Remove 'active' class from all images
-    images.forEach((img) => img.classList.remove("active"));
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all necessary elements
+    const images = document.querySelectorAll(".image-section img");
+    const textTitle = document.getElementById("text-title");
+    const textDescription = document.getElementById("text-description");
 
-    // Add 'active' class to the current image
-    images[currentIndex].classList.add("active");
+    // Array holding titles and descriptions for each image
+    const data = [
+        {
+            title: "Business Event", 
+            description: "Everyone is invited to this exclusive networking event! Come and make connections and hear about real-world experiences."
+        },
+        {
+            title: "Multicultural festival",
+            description: "A vibrant celebration of diverse cultures, traditions, and communities coming together in unity. It features an exciting mix of music, dance, food, art, and performances representing various backgrounds, creating an immersive experience that showcases the richness of global heritage."
+        },
+        {
+            title: "Sport Event",
+            description: "Join us for an exhilarating sports event that promises thrilling competitions, inspiring athletes, and a celebration of teamwork and sportsmanship. Whether you're a fan or a participant, this event is sure to ignite your passion for sports!"
+        },
+        {
+            title: "90s Throwback Party",
+            description: "Get ready to party like it's the 90s! Join us for a nostalgic throwback event filled with iconic music, fashion, and fun activities that will transport you back to the unforgettable decade."
+        ,
+        },
+        {
+            title: "Networking Event",
+            description: "Join us for an exclusive networking event where you can connect with industry professionals and gain valuable insights into the business world."
+        }
+    ];
 
-    // Update text content
-    textTitle.textContent = data[currentIndex].title;
-    textDescription.textContent = data[currentIndex].description;
+    let currentIndex = 0;
 
-    // Move to the next index, or loop back to the start
-    currentIndex = (currentIndex + 1) % images.length;
-}
+    // Function to update the active image and text
+    function updateContent() {
+        if (images.length > 0 && images[currentIndex]) {
+            // Remove 'active' class from all images
+            images.forEach((img) => img.classList.remove("active"));
 
-// Automatically update content every 5 seconds
-setInterval(updateContent, 5000);
+            // Add 'active' class to the current image
+            images[currentIndex].classList.add("active");
+
+            // Update text content
+            textTitle.textContent = data[currentIndex].title;
+            textDescription.textContent = data[currentIndex].description;
+
+            // Move to the next index, or loop back to the start
+            currentIndex = (currentIndex + 1) % images.length;
+        } else {
+            console.error("Error: images[currentIndex] is undefined! Check image elements.");
+        }
+    }
+
+    // Automatically update content every 5 seconds
+    setInterval(updateContent, 5000);
+
+    // Debugging log to ensure images are selected
+    console.log(`Loaded ${images.length} images successfully.`);
+});
+
 
 
 // Carousel Logic
@@ -77,6 +115,8 @@ function prevSlide() {
     updateCarousel();
 }
 
+
+  
 
 // Function to load reviews from localStorage and display them
 function loadReviews() {

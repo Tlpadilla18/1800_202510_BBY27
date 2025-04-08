@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: "Playfair Display", serif;
-    background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+    background: rgb(193, 222, 231);
     color: #4a4a4a;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom: 5px solid #d4af37; /* Decorative border */
+    border-bottom: 5px solid rgb(193, 222, 231); /* Decorative border */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Depth effect */
 }
 
@@ -82,7 +82,7 @@ body {
     margin: auto;
     background: #ffffff;
     padding: 20px;
-    border: 2px solid #d5c3a8;
+    border: 2px solid rgb(193, 222, 231);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -119,23 +119,23 @@ button {
 }
 
 .btn-secondary {
-    background: linear-gradient(to right, #f9d5b4, #d4af37);
+    background: rgb(193, 222, 231);
     color: #ffffff;
 }
 
 .btn-secondary:hover {
     transform: scale(1.05);
-    background: linear-gradient(to right, #d4af37, #f9d5b4);
+    background: rgb(193, 222, 231);
 }
 
 .btn-info {
-    background: linear-gradient(to right, #d4af37, #ffe4d4);
+    background: rgb(193, 222, 231);
     color: #ffffff;
 }
 
 .btn-info:hover {
     transform: scale(1.05);
-    background: linear-gradient(to right, #ffe4d4, #d4af37);
+    background: rgb(193, 222, 231);
 }
 
 /* Mobile Styling */
