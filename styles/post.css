@@ -27,7 +27,7 @@ body {
     max-width: 70%;
     width: 50%; 
     padding: 20px;
-    background: rgba(240, 250, 255, 0.5);
+    background: rgba(240, 250, 255, 0.6);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -297,6 +297,7 @@ button[type="submit"]:hover {
     .dropdown-button {
         display: block; /* Show only on small screens */
         position: relative;
+        margin-bottom: 30px;
     }
 
     .dropdown-button:hover {
@@ -322,8 +323,22 @@ button[type="submit"]:hover {
         background-color: #d32f2f;
         transform: scale(1.05);
       }
+
+      .review-feed {
+        width: 100%;
+        margin-left: 0; /* Remove left margin */
+        margin-top: 20px;
+        padding: 10px;
+        background-color: rgba(249, 254, 255, 0.2);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
+  .big-image-container {
+    margin: auto;
+  }
+
+}
   
 /* Responsive Styles for Small Screens */
 @media (max-width: 480px) {

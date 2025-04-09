@@ -26,6 +26,7 @@ body {
     padding: 8px;
     border: 1px solid #1DA1F2;
     border-radius: 5px;
+    flex-direction: row;
     margin-left: auto; /* Space between search bar and button */
 }
 
@@ -271,4 +272,46 @@ bg-primary {
   }
   .card {
     background-color: white;
+  }
+
+  @media (max-width: 650px){
+    .clubList {
+        flex-direction: column;
+        width: 90%;
+    }
+    .accordion {
+        font-size: 12px;
+    }
+    .panel {
+        padding: 0px 10px;
+    }
+    .card-img-top {
+        max-height: 200px;
+    }
+    .club-list-header {
+        display: flex;
+        flex-direction: column; /* Keeps title above */
+        align-items: center;
+    }
+
+    h3 {
+        margin-bottom: 10px; /* Adds space below the title */
+    }
+
+    .search-container {
+        display: flex;
+        flex-direction: row; /* Keep search bar & button side by side */
+        align-items: center;
+        width: 100%;
+        justify-content: center; /* Centers them */
+    }
+
+    .search-bar {
+        flex: 1; /* Allows it to expand */
+        min-width: 150px; /* Prevents shrinking too much */
+    }
+
+    #searchButton {
+        white-space: nowrap; /* Prevents button from wrapping */
+    }
   }

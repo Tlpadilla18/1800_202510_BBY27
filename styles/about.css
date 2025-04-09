@@ -7,7 +7,7 @@
 
 body {
     font-family: "Playfair Display", serif;
-    background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+    background: rgb(193, 222, 231);
     color: #4a4a4a;
     display: flex;
     flex-direction: column;

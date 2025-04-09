@@ -34,53 +34,14 @@ body {
     font-size: 18px;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #4f47c2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-.navbar .navbar-brand {
-    color: #ffe4d4;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.navbar .nav-link {
-    color: #ffffff;
-    font-size: 16px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar .nav-link:hover {
-    color: #d4af37; /* Hover highlight */
-    transform: scale(1.1);
-}
-
-.navbar-toggler {
-    border: 1px solid #d4af37;
-}
-
-.navbar-toggler-icon {
-    background-color: #ffffff; /* White for visibility */
-}
-
-.navbar .btn-outline-success {
-    border-color: #ffe4d4;
-    color: #ffe4d4;
-}
-
-.navbar .btn-outline-success:hover {
-    background-color: #d4af37;
-    border-color: #d4af37;
-    color: #ffffff;
-}
 
 /* Profile Container */
 .container {
     max-width: 600px;
     margin: auto;
     background: #ffffff;
+    background-color: ;
     padding: 20px;
     border: 2px solid rgb(193, 222, 231);
     border-radius: 15px;
