@@ -6,8 +6,13 @@
 }
 
 body {
+<<<<<<< HEAD
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
+=======
+    font-family: "Playfair Display", serif;
+    background: rgb(193, 222, 231);
+>>>>>>> 23c827f96e6ff9929b9f35c16ad18c6cc1f7d73f
     color: #4a4a4a;
     display: flex;
     flex-direction: column;
@@ -40,6 +45,15 @@ body {
     background-image: url("/images/sparkels.jpg");
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 5vh 20% 5vh 20%;
+
+    
 }
 
 .headercontent {
@@ -136,7 +150,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
 }
   
   
@@ -149,10 +163,13 @@ body {
 
 /* Card Image */
 .card-image {
-    width: 100%;
-    height: 180px; /* Keeps consistent image height */
-    object-fit: cover;
-    border-radius: 12px 12px 0 0; /* Rounded top edges */
+    width: 90%;
+    max-width: 100%;
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover; /* Avoids distortion */
+    display: block; /* Ensures it's treated as a block element */
+    margin: auto; /* Centers horizontally */
 }
 
 /* Card Body */
@@ -168,12 +185,16 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #4a4a4a;
+    width: 100%;
+    text-align: center; /* Center the title */
 }
 
 /* Card Text */
 .card-text {
     font-size: 14px;
     color: #6d6d6d;
+    width: 100%;
+    text-align: center; /* Center the text */
 }
 
 /* Email Link */
@@ -184,6 +205,8 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
+    width: 100%;
+    text-align: center; /* Center the email link */
 }
 
 .card-email:hover {
@@ -195,12 +218,14 @@ body {
     font-size: 12px;
     color: #999999;
     margin-top: 5px;
+    text-align: center; /* Center the timestamp */
+    width: 100%;
 }
 
 
 /* Footer */
 footer {
-    background: rgba(255, 248, 240, 0.9);
+    background: rgba(255, 248, 240, 0.4);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -254,6 +279,11 @@ footer {
 
 /* Responsive Adjustments */
 @media (max-width: 1000px) {
+    .topheader {
+        height: 200px;
+        margin: 5vh 5%;
+    }
+
     .big-image-container {
         flex-direction: column-reverse;
         align-items: center;
@@ -274,6 +304,7 @@ footer {
     .text-section {
         padding-left: 0;
         text-align: center;
+        width: 100%;
     }
 
     .container1 {
@@ -286,9 +317,33 @@ footer {
     .contentcard {
         margin: 5vh 0 5vh 0;
         max-width: 100%;
+        width: 90%;
+    }
+
+    .card-name {
+        font-size: 18px;
+        width: auto;
+        max-width: 100%;
+        text-align: center; /* Center the title */
+    }
+
+    .card-image {
+        width: 90%;
+        max-width: 100%;
+        height: 180px;
+        border-radius: 10px 10px 10px 10px;
+        object-fit: cover; /* Avoids distortion */
+        margin-right: auto; /* Centers horizontally */
     }
 
     
+    
+    /* Card Text */
+    .card-text {
+        font-size: 14px;
+        width: 100%;
+        text-align: center; /* Center the text */
+    }
 
     .card {
          /* Add margin to the cards */
@@ -301,14 +356,23 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: 15px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto; /* Center the footer */
+        overflow: hidden;
+        max-width: 100%;
     }
 
     .footer-icon-container,
     .footer-links,
     .footer-right {
         flex: none; /* Prevent unwanted stretching */
-        width: 100%; /* Ensure sections stay properly positioned */
+        width: auto; /* Ensure sections stay properly positioned */
         margin-bottom: 10px; /* Add space between sections */
+        box-sizing: border-box;
+        padding: 0 10px; /* Add padding for better spacing */
         
     }
 }
