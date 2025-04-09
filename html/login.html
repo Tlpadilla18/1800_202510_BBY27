@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Login/Signup</title>
+    <title>ConnectÜ - BCIT Clubs & Info</title>
     <meta charset="utf-8">
     <!-- BootStrap link -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,188 +15,150 @@
 
 
 <body>
-
-    <!-- main page div -->
-    <div class="main">
-
-    </div>
-
     <!-- Nav Bar -->
-
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ConnectÜ</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" href="Firebaselogin.html">ConnectÜ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Firebaselogin.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Firebaselogin.html">Clubs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Firebaselogin.html">Posts</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            My Items
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Firebaselogin.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="Firebaselogin.html">Messages</a></li>
-                            <li><a class="dropdown-item" href="Firebaselogin.html">Settings</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="Firebaselogin.html">SignIn</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Light/Dark mode?</a>
-                    </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="Firebaselogin.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Firebaselogin.html">Clubs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Firebaselogin.html">Post</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Firebaselogin.html">Login</a></li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex ms-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search Clubs..." aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
+    <!-- Header with BCIT branding -->
     <header class="topheader">
         <div class="headercontent">
-        <h1>Welcome Friend!</h1>
-        <p>Isabel was here</p>
-        <a href="Firebaselogin.html"><button>A random button?</button></a>
+            <h1>Welcome to ConnectÜ!</h1>
+            <p>Your gateway to BCIT clubs, events, reviews, and more.</p>
+            <a href="Firebaselogin.html"><button class="btn btn-light">Get Started</button></a>
         </div>
-
-        <!-- <img src="/images/monkeysky.jpg"> -->
     </header>
 
+    <!-- Carousel Title -->
+    <div class="carousel-title">
+        <h2>Explore</h2>
+    </div>
+
+    <!-- Carousel to highlight key features -->
     <div class="carouselpics">
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/images/bluepeople.jpg" class="d-block w-100" alt="...">
+                    <a href="Firebaselogin.html"><img src="/images/LoginClubs.jpg" class="d-block w-100"
+                            alt="Clubs"></a>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <div class="overlay"></div>
+                        <h5>Explore Clubs</h5>
+                        <p>Find your perfect club and connect with like-minded individuals.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/monkeysky.jpg" class="d-block w-100" alt="...">
+                    <a href="Firebaselogin.html"><img src="/images/LandingReview.jpg" class="d-block w-100"
+                            alt="Reviews"></a>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <div class="overlay"></div>
+                        <h5>Post a Review</h5>
+                        <p>See what others are saying about your favorite clubs and events.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/images/peoplepoweder.jpg" class="d-block w-100" alt="...">
+                    <a href="Firebaselogin.html"><img src="/images/LandingEvents.jpg" class="d-block w-100"
+                            alt="Favourites"></a>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <div class="overlay"></div>
+                        <h5>Explore Events</h5>
+                        <p>Stay updated on the latest events around BCIT.</p>
                     </div>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
             </button>
         </div>
     </div>
 
-    <!-- Content Card -->
-    <div class="contentcard">
-        <div class="card text-center">
+    <!-- Club Spotlight Section -->
+    <section class="club-spotlight">
+        <div class="club-spotlight-header">
+            <h2>Club Spotlight</h2>
+            <p>Discover amazing clubs at BCIT and find your passion!</p>
+        </div>
 
-            <!-- Content header -->
-            <div class="card-header">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                            aria-selected="true">ÜClubs</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
-                            aria-selected="false">ÜEvents</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                            data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
-                            aria-selected="false">ÜVolunteer</button>
-                    </li>
-                </ul>
-
-                <!-- Tab Content -->
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                        tabindex="0">
-
-                        <!-- Clubs -->
+        <!-- Card Section -->
+        <div class="card-section">
+            <div class="row">
+                <!-- First Card -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="/images/LandingChess.jpg" class="card-img-top" alt="Chess Club">
                         <div class="card-body">
-                            <h5 class="card-title">personalized clubs go here</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            <h5 class="card-title">Chess Club</h5>
+                            <p class="card-text">Join the Chess Club to sharpen your strategic thinking and play with
+                                other chess enthusiasts!
                             </p>
-                            <a href="Firebaselogin.html" class="btn btn-primary">Go somewhere</a>
+                            <a href="Firebaselogin.html" class="btn btn-primary">Learn More</a>
                         </div>
-
                     </div>
+                </div>
 
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                        tabindex="0">
-
-                        <!-- Events -->
+                <!-- Second Card -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="/images/LandingComputing.png" class="card-img-top" alt="Computing Club">
                         <div class="card-body">
-                            <h5 class="card-title">peresonlized events go here</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            <h5 class="card-title">Computing Club</h5>
+                            <p class="card-text">If you're passionate about technology and coding, the Computing Club is
+                                the place to be!
                             </p>
-                            <a href="Firebaselogin.html" class="btn btn-primary">Go somewhere</a>
+                            <a href="Firebaselogin.html" class="btn btn-primary">Learn More</a>
                         </div>
-
                     </div>
+                </div>
 
-                    <!-- Volunteer -->
-                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                        tabindex="0">
-
+                <!-- Third Card -->
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="/images/LandingAnime.jpg" class="card-img-top" alt="Anime Club">
                         <div class="card-body">
-                            <h5 class="card-title">personalized volunteer stuff goes here</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                            </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">Anime Club</h5>
+                            <p class="card-text">Join the Anime Club to watch, discuss, and celebrate your favorite
+                                anime shows and movies!</p>
+                            <a href="Firebaselogin.html" class="btn btn-primary">Learn More</a>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </section>
 
-
-    <!-- Including pictures and menu for personalized items -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h3>ConnectÜ</h3>
+            </div>
+            <div class="footer-contact">
+                <p>&copy; 2025 ConnectÜ | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- Javascript Link Bootstrap -->

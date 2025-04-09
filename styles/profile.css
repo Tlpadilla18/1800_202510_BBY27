@@ -1,11 +1,12 @@
 /* General Styles */
 body {
-    font-family: "Playfair Display", serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to bottom, #fdf3e5, #f9e1c9);
     color: #4a4a4a;
     margin: 0;
     padding: 0;
 }
+
 
 /* Top Header */
 .topheader {
