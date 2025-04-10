@@ -495,6 +495,8 @@ function displayCardsDynamically(collection) {
           var bookmarks = userDoc.data().bookmarks;
           if (bookmarks.includes(docID)) {
             document.getElementById('save-' + docID).innerText = 'bookmark';
+          } else {
+            document.getElementById('save-' + docID).innerText = 'bookmark_border';
           }
         })
         container.appendChild(newcard);
@@ -509,22 +511,48 @@ function displayCardsDynamically(collection) {
 }
 
 
-function saveBookmark(clubsDocID) {
+// function saveBookmark(clubsDocID) {
 
-  // Manage the backend process to store the clubsDocID in the database, recording which hike was bookmarked by the user.
-  currentUser.update({
-    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-    // This method ensures that the ID is added only if it's not already present, preventing duplicates.
-    bookmarks: firebase.firestore.FieldValue.arrayUnion(clubsDocID)
-  })
-    // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
-    .then(function () {
-      console.log("bookmark has been saved for" + clubsDocID);
-      let iconID = 'save-' + clubsDocID;
-      //console.log(iconID);
-      //this is to change the icon of the hike that was saved to "filled"
-      document.getElementById(iconID).innerText = 'bookmark';
-    });
-}
+//   // Manage the backend process to store the clubsDocID in the database, recording which hike was bookmarked by the user.
+//   currentUser.update({
+//     // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+//     // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+//     bookmarks: firebase.firestore.FieldValue.arrayUnion(clubsDocID)
+//   })
+//     // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+//     .then(function () {
+//       console.log("bookmark has been saved for" + clubsDocID);
+//       let iconID = 'save-' + clubsDocID;
+//       //console.log(iconID);
+//       //this is to change the icon of the hike that was saved to "filled"
+//       document.getElementById(iconID).innerText = 'bookmark';
+//     });
+// }
 
 // saveBookmark();
+
+function saveBookmark(clubsDocID) {
+  currentUser.get().then(userDoc => {
+      let bookmarks = userDoc.data().bookmarks;
+      let iconID = 'save-' + clubsDocID;
+      let isBookmarked = bookmarks.includes(clubsDocID);
+
+      if (isBookmarked) {
+          // Remove bookmark
+          currentUser.update({
+              bookmarks: firebase.firestore.FieldValue.arrayRemove(clubsDocID)
+          }).then(() => {
+              console.log("Bookmark removed for " + clubsDocID);
+              document.getElementById(iconID).innerText = 'bookmark_border';
+          });
+      } else {
+          // Add bookmark
+          currentUser.update({
+              bookmarks: firebase.firestore.FieldValue.arrayUnion(clubsDocID)
+          }).then(() => {
+              console.log("Bookmark added for " + clubsDocID);
+              document.getElementById(iconID).innerText = 'bookmark';
+          });
+      }
+  });
+}

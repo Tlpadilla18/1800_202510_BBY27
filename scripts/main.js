@@ -36,17 +36,16 @@ const data = [
         description: "Do you love discussing big ideas, analyzing different perspectives, and sharpening your public speaking skills? The After-School Debate Club is looking for passionate thinkers like YOU! Whether you’re an experienced debater or brand new to the art of argument, this is the perfect space to refine your skills, engage in thought-provoking discussions, and build confidence."
     },
     {
-        title: "School Dance Competition",
-        description: "Experience the thrill of competition and the joy of dance! Join us for an exciting event where talented dancers showcase their skills and creativity on stage."
-        
+        title: "Chess Club",
+        description: "Are you a chess enthusiast or looking to learn the game? Join the Chess Club! Whether you're a beginner or a seasoned player, this is the perfect place to sharpen your skills, strategize with fellow players, and enjoy friendly competition."        
     },
     {
-        title: "Back to School Party",
-        description: "Get ready to reunite, make new friends, and start the school year with an electrifying celebration! Join us for an unforgettable night filled with music, games, and good vibes."
+        title: "Anime Club",
+        description: "Are you a fan of anime and manga? Join the Anime Club! Whether you're a seasoned otaku or just starting your journey into the world of anime, this is the perfect place to connect with fellow fans, discuss your favorite series, and explore new titles."
     },
     {
-        title: "School Dance Competition",
-        description: "Experience the thrill of competition and the joy of dance! Join us for an exciting event where talented dancers showcase their skills and creativity on stage."
+        title: "Dance Club",
+        description: "Experience the Ultimate Dance Club! Step into a world of music, movement, and unforgettable nights! Whether you're a seasoned dancer or just looking to let loose, our dance club is the perfect place to connect, express yourself, and feel the beat. With electrifying music, themed dance nights, and a vibrant, welcoming atmosphere, you'll always find a reason to hit the floor."
     }
 ];
 
